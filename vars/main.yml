@@ -1,0 +1,34 @@
+---
+pacman:
+  packages:
+  - docker
+  - docker-compose
+#   - dockutil
+# #  - eksctl
+#   - fping
+#   - gcc
+#   - gdbm
+#   - gettext
+#   - git
+#   - gmp
+#   - go
+#   - iperf
+  - jq
+#   - kops
+#   - mpfr
+#   - mtr
+#   - openconnect
+#   - sqlite
+#   - ssh-copy-id
+# #  - sshpass
+#   - tcping
+#   - telnet
+#   - tfenv
+#   - tree
+#   - vagrant-completion
+  - wget
+#   - zsh
+
+aur:
+  packages:
+  - spotify

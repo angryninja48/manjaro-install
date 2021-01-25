@@ -1,0 +1,4 @@
+- include: mirrors.yml
+- include: packages.yml
+- include: shell.yml
+

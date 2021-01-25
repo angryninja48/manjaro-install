@@ -1,0 +1,49 @@
+---
+
+- name: Install base packages
+  pacman:
+      name: "{{ pacman.packages }}"
+      state: present
+  tags:
+    - packages
+
+- name: Use all cores when compressing packages
+  lineinfile:
+    dest: /etc/makepkg.conf
+    regexp: "^COMPRESSXZ"
+    line: "COMPRESSXZ=(xz -c -z - --threads=0)"
+
+- name: Install AUR packages
+  aur:
+    name: "{{ item }}"
+  with_items: "{{ aur.packages }}"
+  tags:
+    - aur
+    - packages
+
+- name: Push pacman cache cleanup service
+  copy:
+    src: paccache.service
+    dest: /etc/systemd/system/paccache.service
+  notify:
+    - reload systemd config
+  tags:
+    - packages
+
+- name: Push pacman cache cleanup timer
+  copy:
+    src: paccache.timer
+    dest: /etc/systemd/system/paccache.timer
+  notify:
+    - reload systemd config
+    - restart paccache
+  tags:
+    - packages
+
+- name: Enable and start pacman cache cleanup timer
+  service:
+    name: paccache.timer
+    enabled: yes
+    state: started
+  tags:
+    - packages
