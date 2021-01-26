@@ -6,7 +6,7 @@ pacman:
 #   - dockutil
 # #  - eksctl
 #   - fping
-#   - gcc
+  - gcc
 #   - gdbm
 #   - gettext
 #   - git
@@ -15,20 +15,27 @@ pacman:
 #   - iperf
   - jq
 #   - kops
+  - make 
 #   - mpfr
 #   - mtr
 #   - openconnect
 #   - sqlite
 #   - ssh-copy-id
+  - syncthing
 # #  - sshpass
 #   - tcping
 #   - telnet
 #   - tfenv
 #   - tree
 #   - vagrant-completion
+#  - virtualbox
   - wget
 #   - zsh
 
 aur:
   packages:
-  - spotify
+  - slack-desktop
+  - google-chrome
+#  - spotify
+  - visual-studio-code-bin
+  - alacritty

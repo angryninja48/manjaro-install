@@ -1,13 +1,15 @@
 ---
 
 - name: Install base packages
+  become: true
   pacman:
-      name: "{{ pacman.packages }}"
-      state: present
+    name: "{{ pacman.packages }}"
+    state: present
   tags:
     - packages
 
 - name: Use all cores when compressing packages
+  become: true
   lineinfile:
     dest: /etc/makepkg.conf
     regexp: "^COMPRESSXZ"
@@ -15,6 +17,7 @@
 
 - name: Install AUR packages
   aur:
+    use: yay
     name: "{{ item }}"
   with_items: "{{ aur.packages }}"
   tags:
@@ -22,6 +25,7 @@
     - packages
 
 - name: Push pacman cache cleanup service
+  become: true
   copy:
     src: paccache.service
     dest: /etc/systemd/system/paccache.service
@@ -31,6 +35,7 @@
     - packages
 
 - name: Push pacman cache cleanup timer
+  become: true
   copy:
     src: paccache.timer
     dest: /etc/systemd/system/paccache.timer
@@ -41,6 +46,7 @@
     - packages
 
 - name: Enable and start pacman cache cleanup timer
+  become: true
   service:
     name: paccache.timer
     enabled: yes

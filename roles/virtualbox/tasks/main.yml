@@ -1,0 +1,32 @@
+- name: Install vbox
+  become: true
+  pacman: 
+    name: virtualbox
+
+- name: Add user group
+  become: true
+  shell: gpasswd -a {{ ansible_user_id }} {{ item }}
+  with_items:
+    - disk
+    - vboxusers
+
+- set_fact: 
+    kernel_major_version: "{{ansible_kernel[0]}}" 
+    kernel_minor_version: "{{ansible_kernel[2]}}"
+
+- name: Install virtualbox-host-modules
+  become: true
+  pacman:
+    name: "{{'linux%s%s-%s' | format(kernel_major_version, kernel_minor_version, 'virtualbox-host-modules')}}"
+
+- name: Install AUR packages
+  aur:
+    use: yay
+    name: virtualbox-ext-oracle
+  tags:
+    - aur
+    - packages
+
+- name: Add vbox to kernel
+  shell: modprobe vboxdrv
+  become: yes
