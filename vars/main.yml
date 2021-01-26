@@ -1,37 +1,35 @@
 ---
+dotfile_repo: https://github.com/angryninja48/dotfiles
 pacman:
   packages:
+  - ansible
+  - base-devel
+  - coreutils
   - docker
   - docker-compose
-#   - dockutil
-# #  - eksctl
-#   - fping
-  - gcc
-#   - gdbm
-#   - gettext
-#   - git
-#   - gmp
-#   - go
-#   - iperf
-  - jq
-#   - kops
-  - make 
-#   - mpfr
-#   - mtr
-#   - openconnect
-#   - sqlite
-#   - ssh-copy-id
-  - syncthing
-# #  - sshpass
-#   - tcping
-#   - telnet
-#   - tfenv
-#   - tree
-#   - vagrant-completion
-#  - virtualbox
+  - bind-tools
+  - net-tools
+  - openbsd-netcat
+  - curl
   - wget
-#   - zsh
-
+  - rsync
+  - git
+  - gcc
+  - kubectl
+  - make 
+  - tmux
+  - unrar
+  - zip
+  - jq
+  - cups
+  - qemu
+  - libvirt
+  - aws-cli
+  - mtr
+  - openconnect
+  - sqlite
+  - syncthing
+  - vlc
 aur:
   packages:
   - slack-desktop
@@ -39,3 +37,5 @@ aur:
 #  - spotify
   - visual-studio-code-bin
   - alacritty
+  - bitwarden-cli-bin
+  - rke-git

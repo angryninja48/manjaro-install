@@ -1,0 +1,7 @@
+- name: Clone dotfiles
+  git:
+    repo: "{{ dotfile_repo }}"
+    dest: ~/.dotfiles
+
+- name: Execute dotbot
+  shell: ~/.dotfiles/install
