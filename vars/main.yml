@@ -13,6 +13,7 @@ pacman:
   - curl
   - wget
   - rsync
+  - kvantum-qt5
   - git
   - gcc
   - kubectl
