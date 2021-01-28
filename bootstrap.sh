@@ -2,7 +2,7 @@
 # Bootstrap host
 
 # Find the fastest mirror
-sudo pacman-mirrors --fasttrack --country Australia && sudo pacman -Syyu 
+sudo pacman-mirrors --country Australia && sudo pacman -Syyu 
 
 # Update th system 
 sudo pacman --noconfirm -Syu
@@ -30,3 +30,16 @@ fi
 
 # Install AUR ansible plugin
 ansible-galaxy install kewlfft.aur
+
+# Install NVIDIA drivers (Configure after reboot)
+sudo mhwd -a pci nonfree 0300
+
+# Clone install repo
+mkdir ${HOME}/git
+git clone https://github.com/angryninja48/manjaro-install.git
+
+# Enable ssh
+sudo systemctl enable sshd.service
+
+# Reboot
+sudo reboot

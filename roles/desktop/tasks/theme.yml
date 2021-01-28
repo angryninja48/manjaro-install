@@ -33,11 +33,22 @@
     dest: "{{ ansible_user_dir }}/.local/share/wallpapers"
     mode: 0774
 
-- name: Copy the Icons
-  synchronize:
-    src: "{{ icon_destination_folder }}/Papirus/"
-    dest: "{{ ansible_user_dir }}/.local/share/icons/Papirus/"
-    recursive: true
-    delete: true
+# - name: Create Icons directory
+#   file:
+#     path: "{{ ansible_user_dir }}/.local/share/icons/Papirus/"
+#     state: directory
 
-    
+# - name: Copy the Icons
+#   synchronize:
+#     src: "{{ icon_destination_folder }}/Papirus/"
+#     dest: "{{ ansible_user_dir }}/.local/share/icons/Papirus/"
+#     recursive: true
+#     delete: true
+
+- name: Install AUR packages
+  aur:
+    use: yay
+    name: papirus-icon-theme
+  tags:
+    - theme
+    - papirus

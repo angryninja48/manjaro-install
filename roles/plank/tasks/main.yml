@@ -1,5 +1,6 @@
 ---
 - name: Install dock
+  become: true
   pacman:
     name: plank
     state: latest
