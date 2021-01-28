@@ -1,0 +1,43 @@
+- name: Clone KDE Theme
+  git:
+    repo: "{{ orchis_repo }}"
+    dest: "{{ theme_destination_folder }}"
+
+- name: Clone Icons
+  git:
+    repo: "{{ icon_repo }}"
+    dest: "{{ icon_destination_folder }}"
+
+- name: Copy theme to local config
+  synchronize:
+    src: "{{ theme_destination_folder }}/{{ item }}/"
+    dest: "{{ ansible_user_dir }}/.local/share/{{ item }}/"
+    # mode: 0774
+
+  with_items:
+    - aurorae
+    - color-schemes
+    # - Kvantum
+    - plasma
+    # - wallpaper
+
+- name: Copy kvantum config
+  copy:
+    src: "{{ theme_destination_folder }}/Kvantum/"
+    dest: "{{ ansible_user_dir }}/.config/Kvantum"
+    mode: 0774
+
+- name: Copy Wallpaper
+  copy:
+    src: "{{ theme_destination_folder }}/wallpaper/"
+    dest: "{{ ansible_user_dir }}/.local/share/wallpapers"
+    mode: 0774
+
+- name: Copy the Icons
+  synchronize:
+    src: "{{ icon_destination_folder }}/Papirus/"
+    dest: "{{ ansible_user_dir }}/.local/share/icons/Papirus/"
+    recursive: true
+    delete: true
+
+    

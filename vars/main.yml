@@ -1,5 +1,8 @@
 ---
 dotfile_repo: https://github.com/angryninja48/dotfiles
+orchis_repo: https://github.com/vinceliuice/Orchis-kde
+icon_repo: https://github.com/PapirusDevelopmentTeam/papirus-icon-theme
+
 pacman:
   packages:
   - ansible

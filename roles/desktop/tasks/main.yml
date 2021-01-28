@@ -1,1 +1,3 @@
-- include: orchis.yml
+- include: theme.yml
+- include: settings.yml
+- include: wallpaper.yml

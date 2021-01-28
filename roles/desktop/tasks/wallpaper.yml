@@ -1,0 +1,9 @@
+- name: Create Images/Wallpaper directory
+  file:
+    path: "{{ ansible_user_dir }}/Images/Wallpapers"
+    state: directory
+
+- name: Clone DWT Wallpapers
+  git:
+    repo: https://gitlab.com/dwt1/wallpapers
+    dest: "{{ ansible_user_dir }}/Images/Wallpapers/DWT"

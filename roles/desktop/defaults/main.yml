@@ -1,1 +1,2 @@
-orchis_repo: https://github.com/vinceliuice/Orchis-kde
+theme_destination_folder: /tmp/theme
+icon_destination_folder: /tmp/icons

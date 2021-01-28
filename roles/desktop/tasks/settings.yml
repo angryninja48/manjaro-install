@@ -1,0 +1,31 @@
+- name: Set Icon Pack to Papirus
+  shell: >
+      kwriteconfig5 
+      --file kdeglobals
+      --group Icons
+      --key Theme
+      Papirus
+
+- name: Set Plasma to Orchis
+  shell: >
+      kwriteconfig5 
+      --file plasmarc
+      --group Theme
+      --key name
+      Orchis
+
+- name: Set Widget Style to kvantum
+  shell: >
+      kwriteconfig5 
+      --file kdeglobals
+      --group General
+      --key widgetStyle
+      kvantum
+
+- name: Set KDE Global Theme
+  shell: >
+      kwriteconfig5 
+      --file kdeglobals
+      --group KDE
+      --key LookAndFeelPackage
+      com.github.vinceliuice.Orchis
