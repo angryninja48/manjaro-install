@@ -38,9 +38,10 @@ aur:
   packages:
   - slack-desktop
   - google-chrome
-#  - spotify
+  - spotify
   - visual-studio-code-bin
   - alacritty
   - bitwarden-cli-bin
   - rke-git
   - capitaine-cursors
+  - wol-systemd

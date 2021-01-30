@@ -1,0 +1,12 @@
+
+- name: Install WOL Systemd
+  aur:
+    use: yay
+    name: wol-systemd
+
+- name: Enable WOL
+  become: true
+  systemd:
+    name: "wol@{{ ansible_default_ipv4.interface }}"
+    state: started
+    enabled: yes

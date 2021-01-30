@@ -39,6 +39,7 @@ mkdir ${HOME}/git
 git clone https://github.com/angryninja48/manjaro-install.git
 
 # Enable ssh
+sudo systemctl start sshd.service
 sudo systemctl enable sshd.service
 
 # Reboot

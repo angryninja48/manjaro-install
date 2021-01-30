@@ -1,4 +1,4 @@
-- include: mirrors.yml
+- include: ssh.yml
 - include: packages.yml
 - include: shell.yml
-
+- include: wol.yml

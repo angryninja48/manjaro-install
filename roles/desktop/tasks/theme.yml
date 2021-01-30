@@ -3,10 +3,10 @@
     repo: "{{ orchis_repo }}"
     dest: "{{ theme_destination_folder }}"
 
-- name: Clone Icons
-  git:
-    repo: "{{ icon_repo }}"
-    dest: "{{ icon_destination_folder }}"
+# - name: Clone Icons
+#   git:
+#     repo: "{{ icon_repo }}"
+#     dest: "{{ icon_destination_folder }}"
 
 - name: Copy theme to local config
   synchronize:
