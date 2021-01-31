@@ -1,0 +1,33 @@
+- name: Install Syncthing
+  become: true
+  pacman:
+    name: syncthing
+    state: present
+  tags:
+    - syncthing
+
+- name: Push syncthing service
+  become: true
+  copy:
+    src: syncthing.service
+    dest: /etc/systemd/user/syncthing.service
+  notify:
+    - reload systemd config
+  tags:
+    - packages
+
+# - name: Enable syncthing service for user
+#   become: true
+#   systemd:
+#     name: "syncthing.service"
+#     state: started
+#     scope: user
+#     enabled: yes
+
+- name: Enable syncthing service for user
+  become: true
+  shell: systemctl --user enable syncthing.service
+
+- name: Start syncthing service for user
+  become: true
+  shell: systemctl --user start syncthing.service

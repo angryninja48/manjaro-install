@@ -22,10 +22,11 @@
     # - wallpaper
 
 - name: Copy kvantum config
-  copy:
+  synchronize:
     src: "{{ theme_destination_folder }}/Kvantum/"
     dest: "{{ ansible_user_dir }}/.config/Kvantum"
-    mode: 0774
+    recursive: true
+    delete: true
 
 - name: Copy Wallpaper
   copy:

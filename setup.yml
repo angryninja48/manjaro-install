@@ -7,9 +7,10 @@
     - vars/main.yml
 
   roles:
-    - base
-    - ssd
-    - virtualbox
-    - desktop
-    - latte
-    - dotfiles
+    # - base
+    # - ssd
+    # - virtualbox
+    # - desktop
+    # - latte
+    - syncthing
+    # - dotfiles

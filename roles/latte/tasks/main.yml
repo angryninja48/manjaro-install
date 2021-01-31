@@ -1,7 +1,6 @@
-# ---
-# - name: Install dock
-#   become: true
-#   yay:
-#     name: latte-dock
-#     state: latest
-#     # update_cache: yes
+- name: Install dock
+  become: true
+  aur:
+    name: latte-dock
+    state: latest
+    # update_cache: yes
