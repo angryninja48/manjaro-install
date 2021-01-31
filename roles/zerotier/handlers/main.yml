@@ -1,0 +1,15 @@
+- name: restart paccache
+  become: true
+  service:
+    name: paccache.timer
+    state: restarted
+
+# - name: stop systemd per-user instance
+#   service:
+#     name: "user@{{ user.uid }}"
+#     state: stopped
+
+- name: reload systemd config
+  become: true
+  systemd:
+    daemon_reload: yes

@@ -1,0 +1,17 @@
+- name: Install Zerotier
+  become: true
+  pacman:
+    name: zerotier-one
+    state: present
+  tags:
+    - zerotier
+
+- name: Enable zerotier service
+  become: true
+  systemd:
+    name: zerotier-one.service
+    state: started
+    scope: user
+    enabled: yes
+
+#sudo zerotier-cli join xxxx
