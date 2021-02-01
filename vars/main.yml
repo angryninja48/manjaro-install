@@ -12,6 +12,7 @@ pacman:
   - docker-compose
   - bind-tools
   - net-tools
+  - python-pip
   - openbsd-netcat
   - curl
   - deja-dup

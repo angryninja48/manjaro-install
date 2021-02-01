@@ -7,10 +7,13 @@
     - vars/main.yml
 
   roles:
-    # - base
+    - base
     # - ssd
     # - virtualbox
     # - desktop
     # - latte
-    - syncthing
+    # - syncthing
     # - dotfiles
+    - docker
+    - role: marciopaiva.libvirt
+      become: true

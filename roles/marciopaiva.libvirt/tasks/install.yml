@@ -1,0 +1,28 @@
+---
+- name: ensure EPEL repo is installed
+  yum:
+    name: epel-release
+    state: present
+    update_cache: true
+  when:
+    - not ansible_distribution == 'Fedora'
+    - ansible_os_family == "RedHat"
+
+- name: ensure Libvirt packages are installed
+  package:
+    name: "{{ libvirt_packages }}"
+    state: present
+  register: result
+  until: result is success
+  retries: 3
+
+- name: ensure libvirt group exists
+  group:
+    name: libvirt
+    state: present
+
+- name: add '{{ ansible_user_id }}' to libvirt group
+  user:
+    name: "{{ ansible_user_id }}"
+    groups: libvirt
+    append: yes
