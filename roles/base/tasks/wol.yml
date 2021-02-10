@@ -10,3 +10,10 @@
     name: "wol@{{ ansible_default_ipv4.interface }}"
     state: started
     enabled: yes
+
+- name: update TLP Conf
+  become: true
+  lineinfile:
+    path: /etc/tlp.conf
+    regexp: "#WOL_DISABLE=N"
+    line: 'WOL_DISABLE=Y'

@@ -13,6 +13,7 @@ pacman:
   - bind-tools
   - net-tools
   - python-pip
+  - pyenv
   - openbsd-netcat
   - curl
   - deja-dup

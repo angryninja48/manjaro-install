@@ -2,3 +2,4 @@
 - include: packages.yml
 - include: shell.yml
 - include: wol.yml
+- include: interfaces.yml

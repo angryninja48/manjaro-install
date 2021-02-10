@@ -1,0 +1,8 @@
+- name: Use old interface naming
+  become: true
+  lineinfile:
+    path: /etc/default/grub
+    regexp: "GRUB_CMDLINE_LINUX=.*"
+    line: 'GRUB_CMDLINE_LINUX="net.ifnames=0 biosdevname=0"'
+  notify: 
+    - update grub config

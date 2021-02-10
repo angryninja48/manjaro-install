@@ -13,3 +13,7 @@
   become: true
   systemd:
     daemon_reload: yes
+
+- name: update grub config
+  become: true
+  shell: "grub-mkconfig -o /boot/grub/grub.cfg"
