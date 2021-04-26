@@ -1,3 +1,5 @@
 - include: theme.yml
 #- include: settings.yml
 - include: wallpaper.yml
+- include: pam.yml
+  tags: ['pam']

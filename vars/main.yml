@@ -10,7 +10,7 @@ pacman:
   - coreutils
   - docker
   - docker-compose
-  - bind-tools
+#  - bind-tools
   - net-tools
   - python-pip
   - pyenv
@@ -44,7 +44,7 @@ aur:
   - visual-studio-code-bin
   - alacritty
   - bitwarden-cli-bin
-  - rke-git
+  - rke-bin
   - capitaine-cursors
   - wol-systemd
   - signal-desktop

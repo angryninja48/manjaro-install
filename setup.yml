@@ -8,12 +8,12 @@
 
   roles:
     - base
-    # - ssd
-    # - virtualbox
-    # - desktop
-    # - latte
-    # - syncthing
-    # - dotfiles
+    - ssd
+    - virtualbox
+    - desktop
+    - latte
+    - syncthing
+    - dotfiles
     - docker
     - role: marciopaiva.libvirt
       become: true

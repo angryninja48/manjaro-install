@@ -1,0 +1,15 @@
+- name: Configure Gnome Keyring auth
+  become: true
+  lineinfile:
+    path: /etc/pam.d/login
+    insertafter: '^auth'
+    regexp: '^auth.+pam_gnome_keyring.so'
+    line: 'auth       optional     pam_gnome_keyring.so'
+
+- name: Configure session section of /etc/pam.d/login
+  become: true
+  lineinfile:
+    path: /etc/pam.d/login
+    insertafter: '^session'
+    regexp: '^session.+pam_gnome_keyring.so auto_start'
+    line: 'session    optional     pam_gnome_keyring.so auto_start'
