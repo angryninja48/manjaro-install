@@ -15,5 +15,5 @@
     - syncthing
     - dotfiles
     - docker
-    - role: marciopaiva.libvirt
+    - marciopaiva.libvirt
       become: true
