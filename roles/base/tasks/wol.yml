@@ -15,5 +15,5 @@
   become: true
   lineinfile:
     path: /etc/tlp.conf
-    regexp: "#WOL_DISABLE=N"
-    line: 'WOL_DISABLE=Y'
+    regexp: "WOL_DISABLE=Y"
+    line: "WOL_DISABLE=N"
