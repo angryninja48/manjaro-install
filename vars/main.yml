@@ -10,6 +10,7 @@ pacman:
   - coreutils
   - docker
   - docker-compose
+  - dnsutils
 #  - bind-tools
   - net-tools
   - python-pip
