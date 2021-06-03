@@ -11,8 +11,8 @@
     - vboxusers
 
 - set_fact: 
-    kernel_major_version: "{{ansible_kernel[0]}}" 
-    kernel_minor_version: "{{ansible_kernel[2]}}"
+    kernel_major_version: "{{ ansible_kernel.split('.')[0] }}" 
+    kernel_minor_version: "{{ ansible_kernel.split('.')[1] }}" 
 
 - name: Install virtualbox-host-modules
   become: true
@@ -30,3 +30,5 @@
 - name: Add vbox to kernel
   shell: modprobe vboxdrv
   become: yes
+
+
