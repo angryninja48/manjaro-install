@@ -16,18 +16,18 @@
   tags:
     - packages
 
+- name: Enable syncthing service for user
+  # become: true
+  systemd:
+    name: "syncthing.service"
+    state: started
+    scope: user
+    enabled: yes
+
 # - name: Enable syncthing service for user
 #   become: true
-#   systemd:
-#     name: "syncthing.service"
-#     state: started
-#     scope: user
-#     enabled: yes
+#   shell: systemctl --user enable syncthing.service
 
-- name: Enable syncthing service for user
-  become: true
-  shell: systemctl --user enable syncthing.service
-
-- name: Start syncthing service for user
-  become: true
-  shell: systemctl --user start syncthing.service
+# - name: Start syncthing service for user
+#   become: true
+#   shell: systemctl --user start syncthing.service

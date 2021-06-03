@@ -8,6 +8,6 @@ libvirt_packages:
   - bridge-utils 
   - openbsd-netcat
   - ebtables
-  - iptables
+  # - iptables
   - python-lxml
   - python-netaddr
